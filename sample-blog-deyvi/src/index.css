@@ -1,0 +1,13 @@
+body {
+  display: grid;
+  place-items: center center;
+  background-color: #FDE281 ;
+}
+
+#root {
+  margin-top: 5em;
+  background-color: #FEF7DC;
+  width: 800px;
+  text-align: justify;
+  padding: 80px;
+}
