@@ -12,6 +12,17 @@ class App extends Component {
     };
   }
 
+  handleDelete = (id) => {
+    let dataCopy = this.state.allposts;
+    let newData = dataCopy.filter(post => {
+      return post.id !== id;
+    })
+
+    this.setState({
+      allposts: newData,
+    })
+  }
+
   handleTextChange = (event) => {
     this.setState({
       [event.target.id] : event.target.value
@@ -38,7 +49,7 @@ class App extends Component {
     let { allposts, title, body } = this.state
     return (
       <>
-        <Feed allposts={allposts} title={title} body={body} handleTextChange={this.handleTextChange} handleSubmit={this.handleSubmit}/>
+        <Feed allposts={allposts} title={title} body={body} handleTextChange={this.handleTextChange} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
       </>
     );
   }

@@ -3,13 +3,13 @@ import { Post } from './Post.js';
 import { PostForm } from './PostForm.js';
 
 export const Feed = (props) => {
-  let { allposts, title, body, handleTextChange, handleSubmit } = props;
+  let { allposts, title, body, handleTextChange, handleSubmit, handleDelete } = props;
 
   let mappedPosts = allposts.map(post => {
     return (
       <div className='mappedPostsDiv' key={post.id}>
         <Post id={post.id} body={post.body} title={post.title}/>
-        <button className='deleteButton'>Delete</button>
+        <button className='deleteButton' onClick={() =>{handleDelete(post.id)}}>Delete</button>
       </div>
     )
   })
@@ -17,7 +17,6 @@ export const Feed = (props) => {
   return(
     <React.Fragment>
       <h1>Blah Blah Blog</h1>
-      <h4>Add Post: </h4>
       <PostForm title={title} body={body} handleTextChange={handleTextChange} handleSubmit={handleSubmit} />
       {mappedPosts}
     </React.Fragment>
