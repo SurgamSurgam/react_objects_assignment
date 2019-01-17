@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = (props) => {
+export const Post = (props) => {
   let {id, title, body} = props
   return(
     <section id={id}>
@@ -9,5 +9,3 @@ const Post = (props) => {
     </section>
   )
 }
-
-export default Post
